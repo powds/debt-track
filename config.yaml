@@ -1,0 +1,38 @@
+# DebtTrack Configuration
+# Add your projects here
+
+projects:
+  captionhook:
+    path: ~/projects/captionhook
+    hourly_rate: 50
+    critical_threshold: 50
+    high_threshold: 20
+    medium_threshold: 5
+
+  facelessflow:
+    path: ~/projects/facelessflow
+    hourly_rate: 50
+    critical_threshold: 50
+    high_threshold: 20
+    medium_threshold: 5
+
+output:
+  default_format: telegram
+  include_modules: true
+  trend_days: 7
+
+analysis:
+  exclude_patterns:
+    - "node_modules/*"
+    - "*.min.js"
+    - "dist/*"
+    - ".git/*"
+    - "__pycache__/*"
+    - ".next/*"
+    - "*.bundle.js"
+  complexity_weights:
+    nested_depth: 1.5
+    file_age_days: 0.01
+    loc_penalty: 0.001
+    cyclomatic: 0.5
+  refactor_multiplier: 4
